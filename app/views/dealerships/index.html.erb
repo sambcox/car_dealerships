@@ -1,0 +1,9 @@
+<h1>All Dealerships</h1>
+
+<% @dealerships.each do |dealership| %>
+  <h3>Dealer Name: <%= dealership.name %></h3>
+  <h4>Dealer City: <%= dealership.city %></h4>
+  <% if dealership.service_department %>
+    <h4>This dealership has a service department!</h4>
+  <% end %>
+<% end %>

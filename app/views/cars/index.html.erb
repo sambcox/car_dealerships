@@ -1,0 +1,15 @@
+<h1>All Cars</h1>
+
+<% @cars.each do |car| %>
+  <h3><%= car.name %></h3>
+  <% if car.available %>
+    <h4>This <%= car.name %> is available!</h4>
+  <% end %>
+  <ul>
+    <li>Year: <%= car.year %></li>
+    <li>Mileage: <%= car.mileage %></li>
+    <li>Color: <%= car.color %></li>
+    <li>VIN: <%= car.vin %></li>
+    <li> Location: <%= car.dealership_id %></li>
+  </ul>
+<% end %>
