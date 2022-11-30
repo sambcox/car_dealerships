@@ -41,6 +41,7 @@ group :development, :test do
   gem 'simplecov'
   gem 'rspec-rails'
   gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main'
+  gem 'capybara'
 end
 
 group :development do

@@ -6,6 +6,7 @@ class CreateDealership < ActiveRecord::Migration[5.2]
       t.string :name
       t.string :city
       t.boolean :service_department
+      t.integer :employees
     end
   end
 end

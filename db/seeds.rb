@@ -7,6 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 require 'faker'
+puts 'Clearing the Database'
+Dealership.destroy_all
+ActiveRecord::Base.connection.reset_pk_sequence!('dealerships')
+Car.destroy_all
+ActiveRecord::Base.connection.reset_pk_sequence!('dealerships')
 
 puts 'Creating Dealerships'
 10.times do
@@ -15,12 +20,14 @@ puts 'Creating Dealerships'
   name = Faker::Company.name
   city = Faker::Address.city
   service_department = Faker::Boolean.boolean(true_ratio: 0.8)
+  employees = Faker::Number.between(from: 10, to: 1000)
 Dealership.create({
   name: name,
   city: city,
   service_department: service_department,
   created_at: created_at,
-  updated_at: updated_at
+  updated_at: updated_at,
+  employees: employees
 })
 end
 
