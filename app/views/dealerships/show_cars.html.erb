@@ -1,7 +1,7 @@
 <a style="float: left; padding-right: 2em" href="/">Back To Home</a>
 <a style="float: left; padding-right: 2em" href="/dealerships">Back To All Dealerships</a>
 <a style="float: left; padding-right: 2em" href="/cars">Back To All Cars</a>
-<h1 style="float: left, width 100%">All Cars</h1>
+<h1 style="float: left; width: 100%">All Cars at <%= @dealership.name %></h1>
 
 <% @cars.each do |car| %>
   <h3><a href="/cars/<%= car.id %>"><%= car.name %></a></h3>
@@ -13,6 +13,5 @@
     <li>Mileage: <%= car.mileage %></li>
     <li>Color: <%= car.color %></li>
     <li>VIN: <%= car.vin %></li>
-    <li> Location: <%= car.dealership_id %></li>
   </ul>
 <% end %>

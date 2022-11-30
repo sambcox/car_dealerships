@@ -12,4 +12,8 @@ class CarsController < ApplicationController
 
     car.save
   end
+
+  def show
+    @car = Car.find(params[:id])
+  end
 end

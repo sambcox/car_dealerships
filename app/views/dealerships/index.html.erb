@@ -1,7 +1,11 @@
-<h1>All Dealerships</h1>
+<a style="float: left; padding-right: 2em" href="/">Back To Home</a>
+<a style="float: left; padding-right: 2em" href="/dealerships">Back To All Dealerships</a>
+<a style="float: left; padding-right: 2em" href="/cars">Back To All Cars</a>
+<h1 style="float: left; width: 100%">All Dealerships</h1>
+
 
 <% @dealerships.each do |dealership| %>
-  <h3>Dealer Name: <%= dealership.name %></h3>
+  <h3>Dealer Name: <a href="/dealerships/<%= dealership.id %>"><%= dealership.name %></a></h3>
   <h4>Dealer City: <%= dealership.city %></h4>
   <% if dealership.service_department %>
     <h4>This dealership has a service department!</h4>

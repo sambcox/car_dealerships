@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  padding: 8px;
+  background-color: #dddddd;
+}
+</style>
+</head>
+<ul>
+<li><a style="float: left; padding-right: 2em" href="/">Back To Home</a></li>
+<li><a style="float: left; padding-right: 2em" href="/dealerships">Back To All Dealerships</a></li>
+<li><a style="float: left; padding-right: 2em" href="/cars">Back To All Cars</a></li>
+</ul>
+<div>
+<h3>Dealer Name: <%= @dealership.name %></a></h3>
+<h4>Dealer City: <%= @dealership.city %></h4>
+<h4>This dealership has <%= @car_count %> cars in inventory</h4>
+<% if @dealership.service_department %>
+  <h4>This dealership has a service department!</h4>
+<% end %>
+<a href="/dealerships/<%= @dealership.id %>/cars">Explore this dealership's inventory</a>
+</div>
+</html>
