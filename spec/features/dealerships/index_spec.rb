@@ -69,6 +69,14 @@ RSpec.describe 'Dealerships Index', type: :feature do
 
         expect(current_path).to eq('/cars')
       end
+
+      it 'Includes a link to create a new dealership' do
+        visit "/dealerships"
+
+        click_on 'New Dealership'
+
+        expect(current_path).to eq('/dealerships/create')
+      end
     end
   end
 end

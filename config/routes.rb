@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/', to: 'welcome#index'
   get '/dealerships', to: 'dealerships#index'
   get '/cars', to: 'cars#index'
+  get '/dealerships/new', to: 'dealerships#new'
   get '/dealerships/:id', to: "dealerships#show"
   get '/cars/:id', to: "cars#show"
   get '/dealerships/:id/cars', to: "dealership_cars#index"

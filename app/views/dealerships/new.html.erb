@@ -1,0 +1,15 @@
+<form action="/dealerships" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <p>Enter a new dealership:</p>
+  <label for="name">Name:</label><br>
+  <input type='text' id="name" name='dealership[name]'/><br/>
+  <label for="city">City:</label><br>
+  <input type='text' id="city" name='dealership[city]'/><br/>
+  <label for="employees">Employees:</label><br>
+  <input type='number' id="employees" name='dealership[employees]'/><br/>
+  <label for='true'>This dealership has a service department.</label><br>
+  <input type='radio' id='true' name='dealership[service_department]'><br>
+  <label for='false'>This dealership does not have a service department.</label><br>
+  <input type='radio' id='false' name='dealership[service_department]'><br>
+  <input type='submit'/>
+</form>
