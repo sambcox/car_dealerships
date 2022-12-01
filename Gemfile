@@ -41,6 +41,8 @@ group :development, :test do
   gem 'simplecov'
   gem 'rspec-rails'
   gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main'
+  gem 'capybara'
+  gem 'shoulda-matchers', '~> 5.0'
 end
 
 group :development do

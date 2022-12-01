@@ -1,0 +1,15 @@
+<a style="float: left; padding-right: 2em" href="/">Back To Home</a>
+<a style="float: left; padding-right: 2em" href="/dealerships">Back To All Dealerships</a>
+<a style="float: left; padding-right: 2em" href="/cars">Back To All Cars</a>
+
+<h3 style="width: 100%"><%= @car.name %></a></h3>
+<% if @car.available %>
+  <h4>This <%= @car.name %> is available!</h4>
+<% end %>
+<ul>
+  <li>Year: <%= @car.year %></li>
+  <li>Mileage: <%= @car.mileage %></li>
+  <li>Color: <%= @car.color %></li>
+  <li>VIN: <%= @car.vin %></li>
+  <li> Location: <%= @car.dealership_id %></li>
+</ul>
