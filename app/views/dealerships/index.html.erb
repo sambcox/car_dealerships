@@ -7,6 +7,7 @@
 <% @dealerships.each do |dealership| %>
   <h3>Dealer Name: <a href="/dealerships/<%= dealership.id %>"><%= dealership.name %></a></h3>
   <h4>Dealer City: <%= dealership.city %></h4>
+  <h5>This dealership was created at: <%= dealership.created_at %>
   <% if dealership.service_department %>
     <h4>This dealership has a service department!</h4>
   <% end %>
