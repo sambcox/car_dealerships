@@ -1,29 +1,26 @@
-<!DOCTYPE html>
-<html>
-<head>
 <style>
-ul {
+.topbar {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
 }
 
-li {
+.overall_bar {
   float: left;
 }
 
-li a {
+.bar_item {
   display: block;
   padding: 8px;
+  padding-right: 2em;
   background-color: #dddddd;
 }
 </style>
-</head>
-<ul>
-<li><a style="float: left; padding-right: 2em" href="/">Back To Home</a></li>
-<li><a style="float: left; padding-right: 2em" href="/dealerships">Back To All Dealerships</a></li>
-<li><a style="float: left; padding-right: 2em" href="/cars">Back To All Cars</a></li>
+<ul class="topbar">
+<li class="overall_bar"><a class="bar_item" href="/">Back To Home</a></li>
+<li class="overall_bar"><a class="bar_item" href="/dealerships">Back To All Dealerships</a></li>
+<li class="overall_bar"><a class="bar_item" href="/cars">Back To All Cars</a></li>
 </ul>
 <div>
 <h3>Dealer Name: <%= @dealership.name %></a></h3>
