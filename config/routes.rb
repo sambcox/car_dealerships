@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   get '/cars', to: 'cars#index'
   get '/dealerships/:id', to: "dealerships#show"
   get '/cars/:id', to: "cars#show"
-  get '/dealerships/:id/cars', to: "dealerships#show_cars"
+  get '/dealerships/:id/cars', to: "dealership_cars#index"
 end
