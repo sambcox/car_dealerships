@@ -26,7 +26,7 @@
 <h1 style="float: left; width: 100%">All Dealerships</h1>
 
 <% @dealerships.each do |dealership| %>
-  <h3>Dealer Name: <a href="/dealerships/<%= dealership.id %>"><%= dealership.name %></a></h3>
+  <h3 style=border-top: 1px solid black>Dealer Name: <a href="/dealerships/<%= dealership.id %>"><%= dealership.name %></a></h3>
   <h4>Dealer City: <%= dealership.city %></h4>
   <h5>This dealership was created at: <%= dealership.created_at %>
   <% if dealership.service_department %>

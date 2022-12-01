@@ -23,7 +23,7 @@
 <li class="overall_bar"><a class="bar_item" href="/cars">Back To All Cars</a></li>
 </ul>
 <% @cars.each do |car| %>
-  <h3><a href="/cars/<%= car.id %>"><%= car.name %></a></h3>
+  <h3 style=border-top: 1px solid black><a href="/cars/<%= car.id %>"><%= car.name %></a></h3>
   <% if car.available %>
     <h4>This <%= car.name %> is available!</h4>
   <% end %>

@@ -7,8 +7,17 @@ class CarsController < ApplicationController
 
   end
 
-  def create(info)
-    car = Car.new(info)
+  def create
+    car = Car.new({
+      name: params[:cars][:name],
+      available: params[:cars][:available],
+      year: params[:cars][:year],
+      mileage: params[:cars][:mileage],
+      color: params[:cars][:color],
+      vin: params[:cars][:vin],
+      created_at: params[:cars][:created_at],
+      updated_at: params[:cars][:updated_at]
+    })
 
     car.save
   end

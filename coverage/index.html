@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2022-12-01T15:02:48-07:00">2022-12-01T15:02:48-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2022-12-01T16:40:35-07:00">2022-12-01T16:40:35-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,7 +23,7 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="green">
-  97.55%
+  98.91%
 </span>
 
      </span>
@@ -39,15 +39,15 @@
   <a name="AllFiles"></a>
 
   <div>
-    <b>28</b> files in total.
+    <b>29</b> files in total.
   </div>
 
   <div class="t-line-summary">
-    <b>163</b> relevant lines,
-    <span class="green"><b>159</b> lines covered</span> and
-    <span class="red"><b>4</b> lines missed. </span>
+    <b>183</b> relevant lines,
+    <span class="green"><b>181</b> lines covered</span> and
+    <span class="red"><b>2</b> lines missed. </span>
     (<span class="green">
-  97.55%
+  98.91%
 </span>
 )
   </div>
@@ -84,7 +84,7 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#72bc5df3f2a4525f832e4c603f7b32520c4878ff" class="src_link" title="app/controllers/cars_controller.rb">app/controllers/cars_controller.rb</a></td>
             <td class="red strong cell--number t-file__coverage">77.78 %</td>
-            <td class="cell--number">19</td>
+            <td class="cell--number">28</td>
             <td class="cell--number">9</td>
             <td class="cell--number">7</td>
             <td class="cell--number">2</td>
@@ -105,12 +105,12 @@
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#560b3d134c26de8755b8d2a9b9f5ca1bba0397eb" class="src_link" title="app/controllers/dealerships_controller.rb">app/controllers/dealerships_controller.rb</a></td>
-            <td class="red strong cell--number t-file__coverage">80.00 %</td>
-            <td class="cell--number">20</td>
-            <td class="cell--number">10</td>
-            <td class="cell--number">8</td>
-            <td class="cell--number">2</td>
-            <td class="cell--number">1.60</td>
+            <td class="green strong cell--number t-file__coverage">100.00 %</td>
+            <td class="cell--number">29</td>
+            <td class="cell--number">11</td>
+            <td class="cell--number">11</td>
+            <td class="cell--number">0</td>
+            <td class="cell--number">1.82</td>
             
           </tr>
         
@@ -346,6 +346,17 @@
           </tr>
         
           <tr class="t-file">
+            <td class="strong t-file__name"><a href="#c37cab32fc104cbc30a73a72d2a2d2c79eacc515" class="src_link" title="spec/features/dealerships/new_spec.rb">spec/features/dealerships/new_spec.rb</a></td>
+            <td class="green strong cell--number t-file__coverage">100.00 %</td>
+            <td class="cell--number">33</td>
+            <td class="cell--number">24</td>
+            <td class="cell--number">24</td>
+            <td class="cell--number">0</td>
+            <td class="cell--number">1.00</td>
+            
+          </tr>
+        
+          <tr class="t-file">
             <td class="strong t-file__name"><a href="#f937c6f7c52cc15644ef96452c6af0f26a25247f" class="src_link" title="spec/features/dealerships/show_spec.rb">spec/features/dealerships/show_spec.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
             <td class="cell--number">29</td>
@@ -370,11 +381,11 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#5e8bd1e97d1b940ba094915d2c49450ac6182039" class="src_link" title="spec/models/dealership_spec.rb">spec/models/dealership_spec.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">95</td>
-            <td class="cell--number">17</td>
-            <td class="cell--number">17</td>
+            <td class="cell--number">54</td>
+            <td class="cell--number">12</td>
+            <td class="cell--number">12</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">1.06</td>
+            <td class="cell--number">1.08</td>
             
           </tr>
         
@@ -580,7 +591,7 @@
 
             
 
-            <code class="ruby">  def create(info)</code>
+            <code class="ruby">  def create</code>
           </li>
         </div>
       
@@ -591,7 +602,7 @@
 
             
 
-            <code class="ruby">    car = Car.new(info)</code>
+            <code class="ruby">    car = Car.new({</code>
           </li>
         </div>
       
@@ -602,18 +613,18 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">      name: params[:cars][:name],</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="13">
+          <li class="never" data-hits="" data-linenumber="13">
             
             
 
             
 
-            <code class="ruby">    car.save</code>
+            <code class="ruby">      available: params[:cars][:available],</code>
           </li>
         </div>
       
@@ -624,7 +635,7 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">      year: params[:cars][:year],</code>
           </li>
         </div>
       
@@ -635,29 +646,29 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">      mileage: params[:cars][:mileage],</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="16">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="16">
+            
             
 
             
 
-            <code class="ruby">  def show</code>
+            <code class="ruby">      color: params[:cars][:color],</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="17">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="17">
+            
             
 
             
 
-            <code class="ruby">    @car = Car.find(params[:id])</code>
+            <code class="ruby">      vin: params[:cars][:vin],</code>
           </li>
         </div>
       
@@ -668,12 +679,111 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">      created_at: params[:cars][:created_at],</code>
           </li>
         </div>
       
         <div>
           <li class="never" data-hits="" data-linenumber="19">
+            
+            
+
+            
+
+            <code class="ruby">      updated_at: params[:cars][:updated_at]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="20">
+            
+            
+
+            
+
+            <code class="ruby">    })</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="21">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="22">
+            
+            
+
+            
+
+            <code class="ruby">    car.save</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="23">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="24">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="25">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def show</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="26">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    @car = Car.find(params[:id])</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="27">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="28">
             
             
 
@@ -789,8 +899,8 @@
   <div class="header">
     <h3>app/controllers/dealerships_controller.rb</h3>
     <h4>
-      <span class="red">
-  80.0%
+      <span class="green">
+  100.0%
 </span>
 
       lines covered
@@ -799,9 +909,9 @@
     
 
     <div class="t-line-summary">
-      <b>10</b> relevant lines.
-      <span class="green"><b>8</b> lines covered</span> and
-      <span class="red"><b>2</b> lines missed.</span>
+      <b>11</b> relevant lines.
+      <span class="green"><b>11</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
     </div>
 
     
@@ -834,8 +944,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="5" data-linenumber="3">
-            <span class="hits">5</span>
+          <li class="covered" data-hits="6" data-linenumber="3">
+            <span class="hits">6</span>
             
 
             
@@ -917,18 +1027,18 @@
 
             
 
-            <code class="ruby">  def create(info)</code>
+            <code class="ruby">  def create</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="11">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="11">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">    dealership = Dealership.new(info)</code>
+            
+
+            <code class="ruby">    dealership = Dealership.new({</code>
           </li>
         </div>
       
@@ -939,18 +1049,18 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">      name: params[:dealership][:name],</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="13">
+          <li class="never" data-hits="" data-linenumber="13">
             
             
 
             
 
-            <code class="ruby">    dealership.save</code>
+            <code class="ruby">      city: params[:dealership][:city],</code>
           </li>
         </div>
       
@@ -961,7 +1071,7 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">      service_department: params[:dealership][:service_department],</code>
           </li>
         </div>
       
@@ -972,40 +1082,40 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">      created_at: params[:dealership][:created_at],</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="16">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="16">
+            
             
 
             
 
-            <code class="ruby">  def show</code>
+            <code class="ruby">      updated_at: params[:dealership][:updated_at],</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="17">
-            <span class="hits">3</span>
+          <li class="never" data-hits="" data-linenumber="17">
+            
             
 
             
 
-            <code class="ruby">    @dealership = Dealership.find(params[:id])</code>
+            <code class="ruby">      employees: params[:dealership][:employees]</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="18">
-            <span class="hits">3</span>
+          <li class="never" data-hits="" data-linenumber="18">
+            
             
 
             
 
-            <code class="ruby">    @car_count = @dealership.car_count</code>
+            <code class="ruby">    })</code>
           </li>
         </div>
       
@@ -1016,12 +1126,111 @@
 
             
 
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="20">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    dealership.save</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="21">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="22">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    redirect_to &#39;/dealerships&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="23">
+            
+            
+
+            
+
             <code class="ruby">  end</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="20">
+          <li class="never" data-hits="" data-linenumber="24">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="25">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def show</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="26">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">    @dealership = Dealership.find(params[:id])</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="27">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">    @car_count = @dealership.car_count</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="28">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="29">
             
             
 
@@ -4855,6 +5064,400 @@
 </div>
 
       
+        <div class="source_table" id="c37cab32fc104cbc30a73a72d2a2d2c79eacc515">
+  <div class="header">
+    <h3>spec/features/dealerships/new_spec.rb</h3>
+    <h4>
+      <span class="green">
+  100.0%
+</span>
+
+      lines covered
+    </h4>
+
+    
+
+    <div class="t-line-summary">
+      <b>24</b> relevant lines.
+      <span class="green"><b>24</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+
+    
+
+  </div>
+
+  <pre>
+    <ol>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="1">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">require &#39;rails_helper&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="2">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="3">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">RSpec.describe &#39;Dealerships New&#39;, type: :feature do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="4">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  describe &#39;As a user, &#39; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="5">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    describe &#39;When I visit /dealerships/new, &#39; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="6">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      it &#39;I can see a form asking for all correct information&#39; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="7">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        visit &#39;/dealerships/new&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="8">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="9">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expect(page).to have_content(&#39;Name:&#39;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="10">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expect(page).to have_content(&#39;City:&#39;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="11">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expect(page).to have_content(&#39;Employees:&#39;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="12">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expect(page).to have_content(&#39;service department&#39;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="13">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expect(page).to have_field(&quot;name&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="14">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expect(page).to have_field(&#39;employees&#39;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="15">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        page.fill_in &#39;employees&#39;, with: &#39;1234&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="16">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expect(page).to have_field(&#39;employees&#39;, with: &#39;1234&#39;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="17">
+            
+            
+
+            
+
+            <code class="ruby">      end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="18">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="19">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      it &#39;can accept a new dealership&#39; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="20">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        visit &#39;/dealerships/new&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="21">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="22">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        page.fill_in &#39;name&#39;, with: &quot;Sam&#39;s Porsche&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="23">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        page.fill_in &#39;city&#39;, with: &#39;Parker&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="24">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        page.fill_in &#39;employees&#39;, with: &#39;1234&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="25">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        choose &#39;This dealership has a service department.&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="26">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        click_on &#39;Create Dealership&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="27">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expect(current_path).to eq &#39;/dealerships&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="28">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expect(page).to have_content(&quot;Sam&#39;s Porsche&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="29">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expect(&quot;Sam&#39;s Porsche&quot;).to appear_before(@dealership_2.name)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="30">
+            
+            
+
+            
+
+            <code class="ruby">      end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="31">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="32">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="33">
+            
+            
+
+            
+
+            <code class="ruby">end</code>
+          </li>
+        </div>
+      
+    </ol>
+  </pre>
+</div>
+
+      
         <div class="source_table" id="f937c6f7c52cc15644ef96452c6af0f26a25247f">
   <div class="header">
     <h3>spec/features/dealerships/show_spec.rb</h3>
@@ -5371,8 +5974,8 @@
     
 
     <div class="t-line-summary">
-      <b>17</b> relevant lines.
-      <span class="green"><b>17</b> lines covered</span> and
+      <b>12</b> relevant lines.
+      <span class="green"><b>12</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -5478,7 +6081,7 @@
 
             
 
-            <code class="ruby">    before :each do</code>
+            <code class="ruby">    it &#39;Returns the number of cars for the dealership correctly&#39; do</code>
           </li>
         </div>
       
@@ -5489,7 +6092,7 @@
 
             
 
-            <code class="ruby">      @dealership_1 = Dealership.create!({</code>
+            <code class="ruby">      dealership_1 = Dealership.create!({</code>
           </li>
         </div>
       
@@ -5588,7 +6191,7 @@
 
             
 
-            <code class="ruby">      @dealership_2 = Dealership.create!({</code>
+            <code class="ruby">      dealership_2 = Dealership.create!({</code>
           </li>
         </div>
       
@@ -5687,7 +6290,7 @@
 
             
 
-            <code class="ruby">      @car_1 = @dealership_1.cars.create!({</code>
+            <code class="ruby">      car_1 = dealership_1.cars.create!({</code>
           </li>
         </div>
       
@@ -5808,7 +6411,7 @@
 
             
 
-            <code class="ruby">      @car_2 = @dealership_1.cars.create!({</code>
+            <code class="ruby">      car_2 = dealership_1.cars.create!({</code>
           </li>
         </div>
       
@@ -5918,7 +6521,7 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -5929,7 +6532,7 @@
 
             
 
-            <code class="ruby">    it &#39;Returns the number of cars for the dealership correctly&#39; do</code>
+            <code class="ruby">      expect(dealership_1.car_count).to eq 2</code>
           </li>
         </div>
       
@@ -5940,7 +6543,7 @@
 
             
 
-            <code class="ruby">      dealership_1 = Dealership.create!({</code>
+            <code class="ruby">      expect(dealership_2.car_count).to eq 0</code>
           </li>
         </div>
       
@@ -5951,7 +6554,7 @@
 
             
 
-            <code class="ruby">        created_at: Time.now,</code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
@@ -5962,463 +6565,12 @@
 
             
 
-            <code class="ruby">        updated_at: Time.now,</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="54">
-            
-            
-
-            
-
-            <code class="ruby">        name: Faker::Company.name,</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="55">
-            
-            
-
-            
-
-            <code class="ruby">        city: Faker::Address.city,</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="56">
-            
-            
-
-            
-
-            <code class="ruby">        service_department: Faker::Boolean.boolean(true_ratio: 0.8),</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="57">
-            
-            
-
-            
-
-            <code class="ruby">        employees: Faker::Number.between(from: 10, to: 1000)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="58">
-            
-            
-
-            
-
-            <code class="ruby">      })</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="59">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="60">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">      dealership_2 = Dealership.create!({</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="61">
-            
-            
-
-            
-
-            <code class="ruby">        created_at: Time.now,</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="62">
-            
-            
-
-            
-
-            <code class="ruby">        updated_at: Time.now,</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="63">
-            
-            
-
-            
-
-            <code class="ruby">        name: Faker::Company.name,</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="64">
-            
-            
-
-            
-
-            <code class="ruby">        city: Faker::Address.city,</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="65">
-            
-            
-
-            
-
-            <code class="ruby">        service_department: Faker::Boolean.boolean(true_ratio: 0.8),</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="66">
-            
-            
-
-            
-
-            <code class="ruby">        employees: Faker::Number.between(from: 10, to: 1000)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="67">
-            
-            
-
-            
-
-            <code class="ruby">      })</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="68">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="69">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">      car_1 = dealership_1.cars.create!({</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="70">
-            
-            
-
-            
-
-            <code class="ruby">        created_at: Time.now,</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="71">
-            
-            
-
-            
-
-            <code class="ruby">        updated_at: Time.now,</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="72">
-            
-            
-
-            
-
-            <code class="ruby">        name: Faker::Vehicle.make_and_model,</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="73">
-            
-            
-
-            
-
-            <code class="ruby">        available: Faker::Boolean.boolean(true_ratio: 0.9),</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="74">
-            
-            
-
-            
-
-            <code class="ruby">        year: Faker::Vehicle.year,</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="75">
-            
-            
-
-            
-
-            <code class="ruby">        mileage: Faker::Vehicle.mileage,</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="76">
-            
-            
-
-            
-
-            <code class="ruby">        color: Faker::Vehicle.color,</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="77">
-            
-            
-
-            
-
-            <code class="ruby">        vin: Faker::Vehicle.vin</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="78">
-            
-            
-
-            
-
-            <code class="ruby">      })</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="79">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="80">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">      car_2 = dealership_1.cars.create!({</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="81">
-            
-            
-
-            
-
-            <code class="ruby">        created_at: Time.now,</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="82">
-            
-            
-
-            
-
-            <code class="ruby">        updated_at: Time.now,</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="83">
-            
-            
-
-            
-
-            <code class="ruby">        name: Faker::Vehicle.make_and_model,</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="84">
-            
-            
-
-            
-
-            <code class="ruby">        available: Faker::Boolean.boolean(true_ratio: 0.9),</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="85">
-            
-            
-
-            
-
-            <code class="ruby">        year: Faker::Vehicle.year,</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="86">
-            
-            
-
-            
-
-            <code class="ruby">        mileage: Faker::Vehicle.mileage,</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="87">
-            
-            
-
-            
-
-            <code class="ruby">        color: Faker::Vehicle.color,</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="88">
-            
-            
-
-            
-
-            <code class="ruby">        vin: Faker::Vehicle.vin</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="89">
-            
-            
-
-            
-
-            <code class="ruby">      })</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="90">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="91">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">      expect(dealership_1.car_count).to eq 2</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="92">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">      expect(dealership_2.car_count).to eq 0</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="93">
-            
-            
-
-            
-
-            <code class="ruby">    end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="94">
-            
-            
-
-            
-
             <code class="ruby">  end</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="95">
+          <li class="never" data-hits="" data-linenumber="54">
             
             
 
