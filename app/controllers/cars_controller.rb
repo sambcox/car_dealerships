@@ -30,6 +30,21 @@ class CarsController < ApplicationController
     @car = Car.find(params[:id])
   end
 
+  def update
+    car = Car.find(params[:id])
+    car.update({
+      name: params[:cars][:name],
+      available: params[:cars][:available],
+      year: params[:cars][:year],
+      mileage: params[:cars][:mileage],
+      color: params[:cars][:color],
+      vin: params[:cars][:vin],
+      updated_at: Time.now
+      })
+    car.save
+    redirect_to "/cars/#{car.id}"
+  end
+
   def show
     @car = Car.find(params[:id])
   end

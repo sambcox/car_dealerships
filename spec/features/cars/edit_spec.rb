@@ -8,8 +8,8 @@ RSpec.describe 'Cars New', type: :feature do
 
         expect(page).to have_content('Make and Model:')
         expect(page).to have_content('available')
-        expect(page).to have_field("name"), with: @car_1.name
-        expect(page).to have_field('year'), with: @car_1.year
+        expect(page).to have_field("name", with: @car_1.name)
+        expect(page).to have_field('year', with: @car_1.year)
         page.fill_in 'year', with: '1999'
         expect(page).to have_field('year', with: '1999')
       end
