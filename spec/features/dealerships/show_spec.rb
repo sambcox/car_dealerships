@@ -24,6 +24,16 @@ RSpec.describe 'Dealerships Show', type: :feature do
 
         expect(current_path).to eq("/dealerships/#{@dealership_1.id}/cars")
       end
+
+      it 'Includes a link to edit this specific dealership' do
+        visit "/dealerships/#{@dealership_1.id}"
+
+        expect(page).to have_content("Update this dealership")
+
+        click_on 'Update this dealership'
+
+        expect(current_path).to eq("/dealerships/#{@dealership_1.id}/edit")
+      end
     end
   end
 end

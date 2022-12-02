@@ -1,0 +1,41 @@
+<style>
+.topbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.overall_bar {
+  float: left;
+}
+
+.bar_item {
+  display: block;
+  padding: 8px;
+  padding-right: 2em;
+  background-color: #dddddd;
+}
+</style>
+<ul class="topbar">
+<li class="overall_bar"><a class="bar_item" href="/">Back To Home</a></li>
+<li class="overall_bar"><a class="bar_item" href="/dealerships">Back To All Dealerships</a></li>
+<li class="overall_bar"><a class="bar_item" href="/cars">Back To All Cars</a></li>
+</ul>
+
+<form action="/dealerships/<%= @dealership.id %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="hidden" name="_method" value="PATCH" />
+  <p>Edit this dealership:</p>
+  <label for="name">Name:</label><br>
+  <input type='text' id="name" name='dealership[name]' value="<%= @dealership.name %>"/><br/>
+  <label for="city">City:</label><br>
+  <input type='text' id="city" name='dealership[city]' value="<%= @dealership.city %>"/><br/>
+  <label for="employees">Employees:</label><br>
+  <input type='number' id="employees" name='dealership[employees]' value="<%= @dealership.employees %>"/><br/>
+  <label for='true'>This dealership has a service department.</label><br>
+  <input type='radio' id='true' name='dealership[service_department]' <% if @dealership.service_department %>checked="checked"><% end %><<br>
+  <label for='false'>This dealership does not have a service department.</label><br>
+  <input type='radio' id='false' name='dealership[service_department]' <% unless @dealership.service_department %>checked="checked"><% end %><br>
+  <input type='submit' value='Update Dealership'/>
+</form>
