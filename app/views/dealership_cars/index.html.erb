@@ -1,10 +1,8 @@
-<a style="float: left; padding-right: 2em" href="/">Back To Home</a>
-<a style="float: left; padding-right: 2em" href="/dealerships">Back To All Dealerships</a>
-<a style="float: left; padding-right: 2em" href="/cars">Back To All Cars</a>
 <h1 style="float: left; width: 100%">All Cars at <%= @dealership.name %></h1>
+<a href="/dealerships/<%= @dealership.id %>/cars/new">Create Car</a>
 
 <% @cars.each do |car| %>
-  <h3><a href="/cars/<%= car.id %>"><%= car.name %></a></h3>
+  <h3 style=border-top: 1px solid black><a href="/cars/<%= car.id %>"><%= car.name %></a></h3>
   <% if car.available %>
     <h4>This <%= car.name %> is available!</h4>
   <% end %>

@@ -1,7 +1,4 @@
-<a style="float: left; padding-right: 2em" href="/">Back To Home</a>
-<a style="float: left; padding-right: 2em" href="/dealerships">Back To All Dealerships</a>
-<a style="float: left; padding-right: 2em" href="/cars">Back To All Cars</a>
-
+<a style='float: right' href="/cars/<%= @car.id %>/edit">Update this car</a>
 <h3 style="width: 100%"><%= @car.name %></a></h3>
 <% if @car.available %>
   <h4>This <%= @car.name %> is available!</h4>

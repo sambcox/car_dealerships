@@ -1,0 +1,19 @@
+<form action="/dealerships/<%= @dealership.id %>/cars" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <p>Enter a new car:</p>
+  <label for="name">Make and Model:</label><br>
+  <input type='text' id="name" name='cars[name]'/><br/>
+  <label for="vin">VIN:</label><br>
+  <input type='text' id="vin" name='cars[vin]'/><br/>
+  <label for="color">Color:</label><br>
+  <input type='text' id="color" name='cars[color]'/><br/>
+  <label for="year">Year:</label><br>
+  <input type='number' id="year" name='cars[year]'/><br/>
+  <label for="mileage">Mileage:</label><br>
+  <input type='number' id="mileage" name='cars[mileage]'/><br/>
+  <label for='true'>This car is available.</label><br>
+  <input type='radio' id='true' name='cars[available]'><br>
+  <label for='false'>This car is not available.</label><br>
+  <input type='radio' id='false' name='cars[available]'><br>
+  <input type='submit' value='Create Car'/>
+</form>

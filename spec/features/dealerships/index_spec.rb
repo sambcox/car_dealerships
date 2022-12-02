@@ -1,48 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe 'Dealerships Index', type: :feature do
-  before :each do
-    @dealership_1 = Dealership.create!({
-      created_at: Time.now,
-      updated_at: Time.now,
-      name: Faker::Company.name,
-      city: Faker::Address.city,
-      service_department: Faker::Boolean.boolean(true_ratio: 0.8),
-      employees: Faker::Number.between(from: 10, to: 1000)
-    })
-
-    @dealership_2 = Dealership.create!({
-      created_at: Time.now,
-      updated_at: Time.now,
-      name: Faker::Company.name,
-      city: Faker::Address.city,
-      service_department: Faker::Boolean.boolean(true_ratio: 0.8),
-      employees: Faker::Number.between(from: 10, to: 1000)
-    })
-
-    @car_1 = @dealership_1.cars.create!({
-      created_at: Time.now,
-      updated_at: Time.now,
-      name: Faker::Vehicle.make_and_model,
-      available: Faker::Boolean.boolean(true_ratio: 0.9),
-      year: Faker::Vehicle.year,
-      mileage: Faker::Vehicle.mileage,
-      color: Faker::Vehicle.color,
-      vin: Faker::Vehicle.vin
-    })
-
-    @car_2 = @dealership_2.cars.create!({
-      created_at: Time.now,
-      updated_at: Time.now,
-      name: Faker::Vehicle.make_and_model,
-      available: Faker::Boolean.boolean(true_ratio: 0.9),
-      year: Faker::Vehicle.year,
-      mileage: Faker::Vehicle.mileage,
-      color: Faker::Vehicle.color,
-      vin: Faker::Vehicle.vin
-    })
-  end
-
   describe 'As a user, ' do
     describe 'When I visit /dealerships, ' do
       it 'I can see all of the dealership specific information' do
@@ -68,6 +26,14 @@ RSpec.describe 'Dealerships Index', type: :feature do
         click_on 'Back To All Cars'
 
         expect(current_path).to eq('/cars')
+      end
+
+      it 'Includes a link to create a new dealership' do
+        visit "/dealerships"
+
+        click_on 'New Dealership'
+
+        expect(current_path).to eq('/dealerships/new')
       end
     end
   end
