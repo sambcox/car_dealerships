@@ -4,11 +4,13 @@ class CarsController < ApplicationController
   end
 
   def new
-
+    @dealership = Dealership.find(params[:id])
   end
 
   def create
-    car = Car.new({
+    dealership = Dealership.find(params[:id])
+
+    car = dealership.cars.new({
       name: params[:cars][:name],
       available: params[:cars][:available],
       year: params[:cars][:year],
@@ -20,6 +22,8 @@ class CarsController < ApplicationController
     })
 
     car.save
+
+    redirect_to "/dealerships/#{dealership.id}/cars"
   end
 
   def show

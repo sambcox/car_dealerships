@@ -11,6 +11,16 @@ RSpec.describe 'Dealerships Index', type: :feature do
 
         expect(page).to_not have_content(@car_2.name)
       end
+
+      it 'Has a link to create a new car' do
+        visit "/dealerships/#{@dealership_1.id}/cars"
+
+        expect(page).to have_content('Create Car')
+
+        click_on 'Create Car'
+
+        expect(current_path).to eq("/dealerships/#{@dealership_1.id}/cars/new")
+      end
     end
   end
 end
