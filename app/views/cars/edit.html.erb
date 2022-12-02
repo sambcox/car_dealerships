@@ -13,8 +13,8 @@
   <label for="mileage">Mileage:</label><br>
   <input type='number' id="mileage" name='cars[mileage]' value='<%= @car.mileage %>'/><br/>
   <label for='true'>This car is available.</label><br>
-  <input type='radio' id='true' name='cars[available]' ><% if @car.available %>checked="checked"><% end %><br>
+  <input type='radio' id='true' name='cars[available]' <% if @car.available %>checked="checked"><% end %><br>
   <label for='false'>This car is not available.</label><br>
-  <input type='radio' id='false' name='cars[available]'><% unless @car.available %>checked="checked"><% end %><br>
+  <input type='radio' id='false' name='cars[available]' <% unless @car.available %>checked="checked"><% end %><br>
   <input type='submit' value='Update Car'/>
 </form>

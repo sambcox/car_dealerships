@@ -1,13 +1,13 @@
 <% @cars.each do |car| %>
-  <h3 style=border-top: 1px solid black><a href="/cars/<%= car.id %>"><%= car.name %></a></h3>
   <% if car.available %>
-    <h4>This <%= car.name %> is available!</h4>
+    <h3 style=border-top: 1px solid black><a href="/cars/<%= car.id %>"><%= car.name %></a></h3>
+      <h4>This <%= car.name %> is available!</h4>
+    <ul>
+      <li>Year: <%= car.year %></li>
+      <li>Mileage: <%= car.mileage %></li>
+      <li>Color: <%= car.color %></li>
+      <li>VIN: <%= car.vin %></li>
+      <li> Location: <%= car.dealership_id %></li>
+    </ul>
   <% end %>
-  <ul>
-    <li>Year: <%= car.year %></li>
-    <li>Mileage: <%= car.mileage %></li>
-    <li>Color: <%= car.color %></li>
-    <li>VIN: <%= car.vin %></li>
-    <li> Location: <%= car.dealership_id %></li>
-  </ul>
 <% end %>
