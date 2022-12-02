@@ -26,6 +26,10 @@ class CarsController < ApplicationController
     redirect_to "/dealerships/#{dealership.id}/cars"
   end
 
+  def edit
+    @car = Car.find(params[:id])
+  end
+
   def show
     @car = Car.find(params[:id])
   end

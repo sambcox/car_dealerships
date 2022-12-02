@@ -1,27 +1,3 @@
-<style>
-.topbar {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
-
-.overall_bar {
-  float: left;
-}
-
-.bar_item {
-  display: block;
-  padding: 8px;
-  padding-right: 2em;
-  background-color: #dddddd;
-}
-</style>
-<ul class="topbar">
-<li class="overall_bar"><a class="bar_item" href="/">Back To Home</a></li>
-<li class="overall_bar"><a class="bar_item" href="/dealerships">Back To All Dealerships</a></li>
-<li class="overall_bar"><a class="bar_item" href="/cars">Back To All Cars</a></li>
-</ul>
 <h1 style="float: left; width: 100%">All Cars at <%= @dealership.name %></h1>
 <a href="/dealerships/<%= @dealership.id %>/cars/new">Create Car</a>
 

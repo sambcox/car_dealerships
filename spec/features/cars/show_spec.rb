@@ -15,6 +15,16 @@ RSpec.describe 'Cars Show', type: :feature do
 
         expect(page).to_not have_content(@car_2.name)
       end
+
+      it 'has a link to edit the car' do
+        visit "/cars/#{@car_1.id}"
+
+        expect(page).to have_content("Update this car")
+
+        click_on 'Update this car'
+
+        expect(current_path).to eq("/cars/#{@car_1.id}/edit")
+      end
     end
   end
 end

@@ -255,12 +255,52 @@
           1,
           1,
           1,
+          1,
+          1,
           null
         ]
       },
       "/Users/samuelcox/turing_work/mod2/car_dealerships/app/helpers/application_helper.rb": {
         "lines": [
           1,
+          null
+        ]
+      },
+      "/Users/samuelcox/turing_work/mod2/car_dealerships/spec/features/cars/index_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -315,6 +355,16 @@
           1,
           1,
           1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
           1,
           null,
           1,
@@ -642,7 +692,11 @@
           null,
           null,
           1,
+          3,
+          null,
+          null,
           1,
+          2,
           null,
           null
         ]
@@ -714,6 +768,6 @@
         ]
       }
     },
-    "timestamp": 1669948413
+    "timestamp": 1670022522
   }
 }

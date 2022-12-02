@@ -13,3 +13,20 @@
  *= require_tree .
  *= require_self
  */
+ .topbar {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+   overflow: hidden;
+ }
+
+ .overall_bar {
+   float: left;
+ }
+
+ .bar_item {
+   display: block;
+   padding: 8px;
+   padding-right: 2em;
+   background-color: #dddddd;
+ }
