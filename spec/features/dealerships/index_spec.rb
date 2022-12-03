@@ -35,6 +35,16 @@ RSpec.describe 'Dealerships Index', type: :feature do
 
         expect(current_path).to eq('/dealerships/new')
       end
+
+      it 'Includes a link to update each dealership' do
+        visit "/dealerships"
+
+        expect(page).to have_content('Update this dealership')
+
+        first('.update').click_on('Update this dealership')
+
+        expect(current_path).to eq("/dealerships/#{@dealership_2.id}/edit")
+      end
     end
   end
 end
