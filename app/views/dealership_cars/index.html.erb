@@ -1,6 +1,6 @@
 <h1 style="float: left; width: 100%">All Cars at <%= @dealership.name %></h1>
 <a href="/dealerships/<%= @dealership.id %>/cars/new">Create Car</a>
-
+<a href="/dealerships/<%= @dealership.id %>/cars/alphabetical">Sort by Make and Model</a>
 <% @cars.each do |car| %>
   <h3 style=border-top: 1px solid black><a href="/cars/<%= car.id %>"><%= car.name %></a></h3>
   <% if car.available %>

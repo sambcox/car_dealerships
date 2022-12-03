@@ -78,7 +78,7 @@ RSpec.configure do |config|
     @car_2 = @dealership_2.cars.create!({
       created_at: Time.now,
       updated_at: Time.now,
-      name: Faker::Vehicle.make_and_model,
+      name: 'Porsche 911',
       available: Faker::Boolean.boolean(true_ratio: 0.9),
       year: Faker::Vehicle.year,
       mileage: Faker::Vehicle.mileage,
@@ -89,7 +89,7 @@ RSpec.configure do |config|
     @car_3 = @dealership_2.cars.create!({
       created_at: Time.now,
       updated_at: Time.now,
-      name: Faker::Vehicle.make_and_model,
+      name: 'BMW M5',
       available: false,
       year: Faker::Vehicle.year,
       mileage: Faker::Vehicle.mileage,

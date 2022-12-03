@@ -21,6 +21,16 @@ RSpec.describe 'Dealerships Index', type: :feature do
 
         expect(current_path).to eq("/dealerships/#{@dealership_1.id}/cars/new")
       end
+
+      it 'Has a link to sort by alphabetical order' do
+        visit "/dealerships/#{@dealership_2.id}/cars"
+
+        expect(page).to have_content('Sort by Make and Model')
+
+        click_on 'Sort by Make and Model'
+
+        expect(@car_3.name).to appear_before (@car_2.name)
+      end
     end
   end
 end

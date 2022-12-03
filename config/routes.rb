@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   patch 'cars/:id', to: "cars#update"
   get '/cars/:id', to: "cars#show"
   get '/dealerships/:id/cars', to: "dealership_cars#index"
+  get '/dealerships/:id/cars/:order_by', to: "dealership_cars#index"
 end
