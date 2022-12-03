@@ -12,4 +12,7 @@
     <li>Color: <%= car.color %></li>
     <li>VIN: <%= car.vin %></li>
   </ul>
+  <div class='update'>
+    <a href="/cars/<%= car.id %>/edit">Update this car</a>
+  </div>
 <% end %>

@@ -9,5 +9,8 @@
       <li>VIN: <%= car.vin %></li>
       <li> Location: <%= car.dealership_id %></li>
     </ul>
+    <div class='update'>
+      <a href="/cars/<%= car.id %>/edit">Update this car</a>
+    </div>
   <% end %>
 <% end %>
