@@ -45,6 +45,11 @@ class CarsController < ApplicationController
     redirect_to "/cars/#{car.id}"
   end
 
+  def destroy
+    Car.destroy(params[:id])
+    redirect_to "/cars"
+  end
+
   def show
     @car = Car.find(params[:id])
   end

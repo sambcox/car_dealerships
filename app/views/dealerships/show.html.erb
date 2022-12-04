@@ -1,6 +1,11 @@
 <div>
 <h3>Dealer Name: <%= @dealership.name %></a></h3>
 <a href="/dealerships/<%= @dealership.id %>/edit">Update this dealership</a>
+<form action="/dealerships/<%= @dealership.id %>" method="POST">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete this dealership"/>
+</form>
 <h4>Dealer City: <%= @dealership.city %></h4>
 <h4>This dealership has <%= @car_count %> cars in inventory</h4>
 <% if @dealership.service_department %>

@@ -11,9 +11,11 @@ Rails.application.routes.draw do
   get '/dealerships/:id/cars/new', to: "cars#new"
   post '/dealerships/:id/cars', to: "cars#create"
   get '/dealerships/:id', to: "dealerships#show"
+  delete '/dealerships/:id', to: 'dealerships#destroy'
   get '/cars/:id/edit', to: "cars#edit"
   patch 'cars/:id', to: "cars#update"
   get '/cars/:id', to: "cars#show"
+  delete '/cars/:id', to: 'cars#destroy'
   get '/dealerships/:id/cars', to: "dealership_cars#index"
   get '/dealerships/:id/cars/:order_by', to: "dealership_cars#index"
 end
