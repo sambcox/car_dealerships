@@ -1,4 +1,3 @@
-<div>
 <h3>Dealer Name: <%= @dealership.name %></a></h3>
 <a href="/dealerships/<%= @dealership.id %>/edit">Update this dealership</a>
 <form action="/dealerships/<%= @dealership.id %>" method="POST">
@@ -12,5 +11,4 @@
   <h4>This dealership has a service department!</h4>
 <% end %>
 <a href="/dealerships/<%= @dealership.id %>/cars">Explore this dealership's inventory</a>
-</div>
-</html>
+

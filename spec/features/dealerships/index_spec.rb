@@ -45,6 +45,18 @@ RSpec.describe 'Dealerships Index', type: :feature do
 
         expect(current_path).to eq("/dealerships/#{@dealership_2.id}/edit")
       end
+
+      it 'Includes a link to delete each dealership' do
+        visit "/dealerships"
+
+        expect(page).to have_button("Delete this dealership")
+
+        first('.update').click_button('Delete this dealership')
+
+        expect(current_path).to eq("/dealerships")
+
+        expect(page).to_not have_content(@dealership_2.name)
+      end
     end
   end
 end

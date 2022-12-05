@@ -41,6 +41,17 @@ RSpec.describe 'Cars Index', type: :feature do
 
         expect(current_path).to eq("/cars/#{@car_1.id}/edit")
       end
+
+      it 'has a link to delete each car' do
+        visit "/cars/"
+
+        expect(page).to have_button("Delete this car")
+
+        first('.update').click_button('Delete this car')
+
+        expect(current_path).to eq("/cars")
+        expect(page).to_not have_content(@car_1.name)
+      end
     end
   end
 end

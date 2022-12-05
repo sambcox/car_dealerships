@@ -1,14 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe 'Dealerships New', type: :feature do
-  describe 'As a user, ' do
-    describe 'When I visit /dealerships/new, ' do
+  describe 'As a user,' do
+    describe 'When I visit /dealerships/new,' do
       it 'I can see a form asking for all correct information' do
         visit '/dealerships/new'
 
-        expect(page).to have_content('Name:')
-        expect(page).to have_content('City:')
-        expect(page).to have_content('Employees:')
+        expect(page).to have_content('Name')
+        expect(page).to have_content('City')
+        expect(page).to have_content('Employees')
         expect(page).to have_content('service department')
         expect(page).to have_field("name")
         expect(page).to have_field('employees')
@@ -22,7 +22,7 @@ RSpec.describe 'Dealerships New', type: :feature do
         page.fill_in 'name', with: "Sam's Porsche"
         page.fill_in 'city', with: 'Parker'
         page.fill_in 'employees', with: '1234'
-        choose 'This dealership has a service department.'
+        choose(:service_department, with: :true)
         click_on 'Create Dealership'
         expect(current_path).to eq '/dealerships'
         expect(page).to have_content("Sam's Porsche")

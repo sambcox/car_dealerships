@@ -69,7 +69,7 @@ RSpec.configure do |config|
       updated_at: Time.now,
       name: Faker::Vehicle.make_and_model,
       available: true,
-      year: Faker::Vehicle.year,
+      year: 1999,
       mileage: Faker::Vehicle.mileage,
       color: Faker::Vehicle.color,
       vin: Faker::Vehicle.vin

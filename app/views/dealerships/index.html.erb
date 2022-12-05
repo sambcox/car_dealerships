@@ -7,6 +7,11 @@
   <h5>This dealership was created at: <%= dealership.created_at %>
   <div class='update'>
   <a href="/dealerships/<%= dealership.id %>/edit">Update this dealership</a>
+  <form action="/dealerships/<%= dealership.id %>" method="POST">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete this dealership"/>
+</form>
   </div>
   <% if dealership.service_department %>
     <h4>This dealership has a service department!</h4>

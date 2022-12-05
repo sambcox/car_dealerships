@@ -11,6 +11,11 @@
     </ul>
     <div class='update'>
       <a href="/cars/<%= car.id %>/edit">Update this car</a>
+      <form action="/cars/<%= car.id %>" method="POST">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      <input type="hidden" name="_method" value="DELETE">
+      <input type="submit" value="Delete this car"/>
+    </form>
     </div>
   <% end %>
 <% end %>

@@ -6,7 +6,7 @@ RSpec.describe 'Cars New', type: :feature do
       it 'I can see a form asking for all correct information' do
         visit "/dealerships/#{@dealership_1.id}/cars/new"
 
-        expect(page).to have_content('Make and Model:')
+        expect(page).to have_content('Make and Model')
         expect(page).to have_content('available')
         expect(page).to have_field("name")
         expect(page).to have_field('year')
@@ -14,7 +14,7 @@ RSpec.describe 'Cars New', type: :feature do
         expect(page).to have_field('year', with: '1999')
       end
 
-      it 'can accept a new dealership' do
+      it 'can accept a new car' do
         visit "/dealerships/#{@dealership_1.id}/cars/new"
 
         page.fill_in 'name', with: "Porsche 911"
@@ -22,7 +22,7 @@ RSpec.describe 'Cars New', type: :feature do
         page.fill_in 'color', with: 'GT Silver'
         page.fill_in 'year', with: '2007'
         page.fill_in 'mileage', with: '21050'
-        choose 'This car is available.'
+        choose(:available, with: :true)
         click_on 'Create Car'
         expect(current_path).to eq "/dealerships/#{@dealership_1.id}/cars"
         expect(page).to have_content("Porsche 911")
