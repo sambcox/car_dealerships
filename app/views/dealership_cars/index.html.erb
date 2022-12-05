@@ -1,6 +1,12 @@
 <h1 style="float: left; width: 100%">All Cars at <%= @dealership.name %></h1>
 <a href="/dealerships/<%= @dealership.id %>/cars/new">Create Car</a>
-
+<form action="/dealerships/<%= @dealership.id %>/cars?filter=minimum_year" method="get">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <label for="year">Minimum Year:</label><br>
+  <input type='number' id="year" name='year'/><br/>
+  <input type='submit' id='submit' value='Submit'>
+</form>
+<a style='float: right' href="/dealerships/<%= @dealership.id %>/cars?order_by=alphabetical">Sort by Make and Model</a>
 <% @cars.each do |car| %>
   <h3 style=border-top: 1px solid black><a href="/cars/<%= car.id %>"><%= car.name %></a></h3>
   <% if car.available %>
@@ -12,4 +18,12 @@
     <li>Color: <%= car.color %></li>
     <li>VIN: <%= car.vin %></li>
   </ul>
+  <div class='update'>
+    <a href="/cars/<%= car.id %>/edit">Update this car</a>
+    <form action="/dealerships/<%= @dealership.id %>/cars/<%= car.id %>" method="POST">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      <input type="hidden" name="_method" value="DELETE">
+      <input type="submit" value="Delete this car"/>
+    </form>
+  </div>
 <% end %>

@@ -1,16 +1,13 @@
-<form action="/dealerships/<%= @dealership.id %>" method="post">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <input type="hidden" name="_method" value="PATCH" />
-  <p>Edit this dealership:</p>
-  <label for="name">Name:</label><br>
-  <input type='text' id="name" name='dealership[name]' value="<%= @dealership.name %>"/><br/>
-  <label for="city">City:</label><br>
-  <input type='text' id="city" name='dealership[city]' value="<%= @dealership.city %>"/><br/>
-  <label for="employees">Employees:</label><br>
-  <input type='number' id="employees" name='dealership[employees]' value="<%= @dealership.employees %>"/><br/>
-  <label for='true'>This dealership has a service department.</label><br>
-  <input type='radio' id='true' name='dealership[service_department]' <% if @dealership.service_department %>checked="checked"><% end %><<br>
-  <label for='false'>This dealership does not have a service department.</label><br>
-  <input type='radio' id='false' name='dealership[service_department]' <% unless @dealership.service_department %>checked="checked"><% end %><br>
-  <input type='submit' value='Update Dealership'/>
-</form>
+<%= form_with url: "/dealerships/#{@dealership.id}", method: :patch, local: true do |form| %>
+  <%= form.label :name %><br>
+  <%= form.text_field :name, value: "#{@dealership.name}" %><br>
+  <%= form.label :city %><br>
+  <%= form.text_field :city, value: "#{@dealership.city}" %><br>
+  <%= form.label :employees %><br>
+  <%= form.number_field :employees, value: "#{@dealership.employees}" %><br>
+  <%= form.label :service_department, "Does this dealership have a service department?" %><br>
+  Yes:<%= form.radio_button :service_department, label=true, checked: @dealership.service_department %><br>
+  No:<%= form.radio_button :service_department, label=false, checked:
+  !@dealership.service_department %><br>
+  <%= form.submit 'Update Dealership' %>
+<% end %>

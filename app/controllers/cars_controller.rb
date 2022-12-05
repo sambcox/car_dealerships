@@ -10,16 +10,7 @@ class CarsController < ApplicationController
   def create
     dealership = Dealership.find(params[:id])
 
-    car = dealership.cars.new({
-      name: params[:cars][:name],
-      available: params[:cars][:available],
-      year: params[:cars][:year],
-      mileage: params[:cars][:mileage],
-      color: params[:cars][:color],
-      vin: params[:cars][:vin],
-      created_at: params[:cars][:created_at],
-      updated_at: params[:cars][:updated_at]
-    })
+    car = dealership.cars.new(car_params)
 
     car.save
 
@@ -32,20 +23,22 @@ class CarsController < ApplicationController
 
   def update
     car = Car.find(params[:id])
-    car.update({
-      name: params[:cars][:name],
-      available: params[:cars][:available],
-      year: params[:cars][:year],
-      mileage: params[:cars][:mileage],
-      color: params[:cars][:color],
-      vin: params[:cars][:vin],
-      updated_at: Time.now
-      })
+    car.update(car_params)
     car.save
     redirect_to "/cars/#{car.id}"
   end
 
+  def destroy
+    Car.destroy(params[:id])
+    redirect_to "/cars"
+  end
+
   def show
     @car = Car.find(params[:id])
+  end
+
+  private
+  def car_params
+    params.permit(:name, :available, :year, :mileage, :color, :vin)
   end
 end

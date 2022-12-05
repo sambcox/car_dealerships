@@ -1,4 +1,7 @@
 <a style='float: right' href="/cars/<%= @car.id %>/edit">Update this car</a>
+<%= form_with url: "/cars/#{@car.id}", method: :delete, local: true do |form| %>
+  <%= form.submit value: "Delete this car"%>
+<% end %>
 <h3 style="width: 100%"><%= @car.name %></a></h3>
 <% if @car.available %>
   <h4>This <%= @car.name %> is available!</h4>
