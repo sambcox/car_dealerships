@@ -1,5 +1,12 @@
 <a style="float: right", href="/dealerships/new">New Dealership</a>
-<h1 style="float: left; width: 100%">All Dealerships</h1>
+<a style="float: right", href="/dealerships?order_by=car_count">Sort by Amount of Cars</a>
+<h1 style="float: left; width: 100%">All Dealerships</h1><br>
+
+<%= form_with url: "/dealerships?filter=name", method: :get, local: true do |form| %>
+  <%= form.label :name_input, "Filter by dealership name"%><br>
+  <%= form.text_field :name_input %><br/>
+  <%= form.submit 'Filter' %>
+<% end %>
 
 <% @dealerships.each do |dealership| %>
   <h3 style=border-top: 1px solid black>Dealer Name: <a href="/dealerships/<%= dealership.id %>"><%= dealership.name %></a></h3>

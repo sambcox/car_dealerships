@@ -1,9 +1,10 @@
 class DealershipCarsController < ApplicationController
   def index
+    redirect_to '/errors/not_found' if Dealership.where(id: params[:id]) == []
     @dealership = Dealership.find(params[:id])
     @cars = @dealership.cars
-    @cars = @cars.order(Arel.sql("lower(name)")) if params[:order_by] == 'alphabetical'
-    @cars = @cars.where("year > #{params[:year]}") if params[:year]
+    @cars = @dealership.alphabetical_order if params[:order_by] == 'alphabetical'
+    @cars = @dealership.year_limit(params[:year]) if params[:year]
   end
 
   def destroy

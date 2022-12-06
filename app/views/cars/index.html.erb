@@ -1,3 +1,9 @@
+<h1>All Cars</h1>
+<%= form_with url: "/cars?filter=name", method: :get, local: true do |form| %>
+  <%= form.label :name_input, "Filter by make and model"%><br>
+  <%= form.text_field :name_input %><br/>
+  <%= form.submit 'Filter' %>
+<% end %>
 <% @cars.each do |car| %>
   <% if car.available %>
     <h3 style=border-top: 1px solid black><a href="/cars/<%= car.id %>"><%= car.name %></a></h3>

@@ -67,7 +67,7 @@ RSpec.configure do |config|
     @car_1 = @dealership_1.cars.create!({
       created_at: Time.now,
       updated_at: Time.now,
-      name: Faker::Vehicle.make_and_model,
+      name: 'Lexus LFA',
       available: true,
       year: 1999,
       mileage: Faker::Vehicle.mileage,

@@ -1,10 +1,11 @@
 <h1 style="float: left; width: 100%">All Cars at <%= @dealership.name %></h1>
 <a href="/dealerships/<%= @dealership.id %>/cars/new">Create Car</a>
 <form action="/dealerships/<%= @dealership.id %>/cars?filter=minimum_year" method="get">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <label for="year">Minimum Year:</label><br>
-  <input type='number' id="year" name='year'/><br/>
-  <input type='submit' id='submit' value='Submit'>
+<%= form_with url: "/dealerships/#{@dealership.id}/cars?filter=minimum_year", method: :get, local: true do |form| %>
+  <%= form.label :year, "Minumum Year"%><br>
+  <%= form.number_field :year %><br/>
+  <%= form.submit 'Submit' %>
+<% end %>
 </form>
 <a style='float: right' href="/dealerships/<%= @dealership.id %>/cars?order_by=alphabetical">Sort by Make and Model</a>
 <% @cars.each do |car| %>

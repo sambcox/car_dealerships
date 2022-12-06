@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_30_233803) do
+ActiveRecord::Schema.define(version: 2022_12_06_203333) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 2022_11_30_233803) do
     t.string "city"
     t.boolean "service_department"
     t.integer "employees"
+    t.integer "cars_count"
   end
 
   add_foreign_key "cars", "dealerships"

@@ -57,6 +57,49 @@ RSpec.describe 'Dealerships Index', type: :feature do
 
         expect(page).to_not have_content(@dealership_2.name)
       end
+
+      it 'Includes a link to sort by car count' do
+        visit "/dealerships"
+
+        expect(page).to have_content("Sort by Amount of Cars")
+
+        click_on('Sort by Amount of Cars')
+
+        expect(current_path).to eq("/dealerships")
+
+        expect(@dealership_2.name).to appear_before(@dealership_1.name)
+      end
+
+      it 'Includes a box to filter by name exactly' do
+        visit "/dealerships"
+
+        expect(page).to have_content("Filter by dealership name")
+
+        fill_in(:name_input, with: @dealership_1.name)
+
+        click_on("Filter")
+
+        expect(current_path).to eq("/dealerships")
+
+        expect(page).to have_content(@dealership_1.name)
+        expect(page).to_not have_content(@dealership_2.name)
+      end
+
+      it 'Includes a box to filter by name partially' do
+        visit "/dealerships"
+
+        expect(page).to have_content("Filter by dealership name")
+        query = @dealership_1.name[0..-2]
+
+        fill_in(:name_input, with: query)
+
+        click_on("Filter")
+
+        expect(current_path).to eq("/dealerships")
+
+        expect(page).to have_content(@dealership_1.name)
+        expect(page).to_not have_content(@dealership_2.name)
+      end
     end
   end
 end

@@ -32,5 +32,7 @@
  }
 
  .update {
-
+  padding: 8px;
+  padding-right: 2em;
+  background-color: #90988a;
  }
