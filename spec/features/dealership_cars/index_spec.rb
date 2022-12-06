@@ -60,7 +60,7 @@ RSpec.describe 'Dealerships Cars Index', type: :feature do
 
         fill_in('year', with: 2000)
 
-        click_on 'submit'
+        click_on 'Submit'
 
         expect(page).to_not have_content(@car_1.name)
       end

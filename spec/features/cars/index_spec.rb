@@ -52,6 +52,36 @@ RSpec.describe 'Cars Index', type: :feature do
         expect(current_path).to eq("/cars")
         expect(page).to_not have_content(@car_1.name)
       end
+
+      it 'Includes a box to filter by make and model exactly' do
+        visit "/cars"
+
+        expect(page).to have_content("Filter by make and model")
+
+        fill_in(:name_input, with: @car_1.name)
+
+        click_on("Filter")
+
+        expect(current_path).to eq("/cars")
+
+        expect(page).to have_content(@car_1.name)
+        expect(page).to_not have_content(@car_2.name)
+      end
+
+      it 'Includes a box to filter by make and model partially' do
+        visit "/cars"
+
+        expect(page).to have_content("Filter by make and model")
+
+        fill_in(:name_input, with: 'Por')
+
+        click_on("Filter")
+
+        expect(current_path).to eq("/cars")
+
+        expect(page).to have_content(@car_2.name)
+        expect(page).to_not have_content(@car_1.name)
+      end
     end
   end
 end

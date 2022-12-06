@@ -1,10 +1,15 @@
 class CarsController < ApplicationController
   def index
     @cars = Car.all
+    @cars = Car.filter_by_name(params[:name_input]) if params[:name_input]
   end
 
   def new
-    @dealership = Dealership.find(params[:id])
+    if Dealership.find_by_id(params[:id]).present?
+      @dealership = Dealership.find(params[:id])
+    else
+      redirect_to "/errors/not_found"
+    end
   end
 
   def create
@@ -18,7 +23,11 @@ class CarsController < ApplicationController
   end
 
   def edit
-    @car = Car.find(params[:id])
+    if Car.find_by_id(params[:id]).present?
+      @car = Car.find(params[:id])
+    else
+      redirect_to '/errors/not_found'
+    end
   end
 
   def update
@@ -34,7 +43,11 @@ class CarsController < ApplicationController
   end
 
   def show
-    @car = Car.find(params[:id])
+    if Car.find_by_id(params[:id]).present?
+      @car = Car.find(params[:id])
+    else
+      redirect_to '/errors/not_found'
+    end
   end
 
   private

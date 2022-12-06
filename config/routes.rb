@@ -19,4 +19,5 @@ Rails.application.routes.draw do
   delete '/dealerships/:dealership_id/cars/:car_id', to: 'dealership_cars#destroy'
   get '/dealerships/:id/cars', to: "dealership_cars#index"
   post '/dealerships/:id/cars', to: "dealership_cars#index"
+  get '/errors/not_found', to: 'errors#not_found'
 end

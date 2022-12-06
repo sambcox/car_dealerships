@@ -1,6 +1,8 @@
 class DealershipsController < ApplicationController
   def index
     @dealerships = Dealership.order(created_at: :desc)
+    @dealerships = Dealership.order_by_car_count if params[:order_by] == 'car_count'
+    @dealerships = Dealership.filter_by_name(params[:name_input]) if params[:name_input]
   end
 
   def new
@@ -16,7 +18,11 @@ class DealershipsController < ApplicationController
   end
 
   def edit
-    @dealership = Dealership.find(params[:id])
+    if Dealership.find_by_id(params[:id]).present?
+      @dealership = Dealership.find(params[:id])
+    else
+      redirect_to "/errors/not_found"
+    end
   end
 
   def update
@@ -33,8 +39,12 @@ class DealershipsController < ApplicationController
   end
 
   def show
-    @dealership = Dealership.find(params[:id])
-    @car_count = @dealership.car_count
+    if Dealership.find_by_id(params[:id]).present?
+      @dealership = Dealership.find(params[:id])
+      @car_count = @dealership.car_count
+    else
+      redirect_to "/errors/not_found"
+    end
   end
 
   private

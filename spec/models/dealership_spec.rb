@@ -7,48 +7,20 @@ RSpec.describe Dealership, type: :model do
 
   describe 'instance methods' do
     it 'Returns the number of cars for the dealership correctly' do
-      dealership_1 = Dealership.create!({
-        created_at: Time.now,
-        updated_at: Time.now,
-        name: Faker::Company.name,
-        city: Faker::Address.city,
-        service_department: Faker::Boolean.boolean(true_ratio: 0.8),
-        employees: Faker::Number.between(from: 10, to: 1000)
-      })
+      expect(@dealership_1.car_count).to eq 1
+      expect(@dealership_2.car_count).to eq 2
+    end
 
-      dealership_2 = Dealership.create!({
-        created_at: Time.now,
-        updated_at: Time.now,
-        name: Faker::Company.name,
-        city: Faker::Address.city,
-        service_department: Faker::Boolean.boolean(true_ratio: 0.8),
-        employees: Faker::Number.between(from: 10, to: 1000)
-      })
+    it 'can return the cars in alphabetical order' do
+      expect(@dealership_2.alphabetical_order).to eq([@car_3, @car_2])
+    end
 
-      car_1 = dealership_1.cars.create!({
-        created_at: Time.now,
-        updated_at: Time.now,
-        name: Faker::Vehicle.make_and_model,
-        available: Faker::Boolean.boolean(true_ratio: 0.9),
-        year: Faker::Vehicle.year,
-        mileage: Faker::Vehicle.mileage,
-        color: Faker::Vehicle.color,
-        vin: Faker::Vehicle.vin
-      })
+    it 'can return cars limited by year' do
+      expect(@dealership_2.year_limit(2000).include?(@car_1)).to eq false
+    end
 
-      car_2 = dealership_1.cars.create!({
-        created_at: Time.now,
-        updated_at: Time.now,
-        name: Faker::Vehicle.make_and_model,
-        available: Faker::Boolean.boolean(true_ratio: 0.9),
-        year: Faker::Vehicle.year,
-        mileage: Faker::Vehicle.mileage,
-        color: Faker::Vehicle.color,
-        vin: Faker::Vehicle.vin
-      })
-
-      expect(dealership_1.car_count).to eq 2
-      expect(dealership_2.car_count).to eq 0
+    it 'can return dealerships sorted by amount of cars' do
+      expect(Dealership.order_by_car_count).to eq([@dealership_2, @dealership_1])
     end
   end
 end
