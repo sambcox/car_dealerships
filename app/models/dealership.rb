@@ -6,7 +6,7 @@ class Dealership < ApplicationRecord
   end
 
   def alphabetical_order
-    cars.order(Arel.sql("lower(name)"))
+    cars.order(Arel.sql('lower(name)'))
   end
 
   def year_limit(year)

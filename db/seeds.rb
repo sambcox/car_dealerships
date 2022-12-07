@@ -21,14 +21,14 @@ puts 'Creating Dealerships'
   city = Faker::Address.city
   service_department = Faker::Boolean.boolean(true_ratio: 0.8)
   employees = Faker::Number.between(from: 10, to: 1000)
-Dealership.create({
-  name: name,
-  city: city,
-  service_department: service_department,
-  created_at: created_at,
-  updated_at: updated_at,
-  employees: employees
-})
+  Dealership.create({
+                      name: name,
+                      city: city,
+                      service_department: service_department,
+                      created_at: created_at,
+                      updated_at: updated_at,
+                      employees: employees
+                    })
 end
 
 puts 'Creating Cars'
@@ -42,15 +42,15 @@ Dealership.all.each do |dealership|
     mileage = Faker::Vehicle.mileage
     color = Faker::Vehicle.color
     vin = Faker::Vehicle.vin
-  dealership.cars.create({
-    name: name,
-    available: available,
-    year: year,
-    mileage: mileage,
-    color: color,
-    vin: vin,
-    created_at: created_at,
-    updated_at: updated_at
-  })
+    dealership.cars.create({
+                             name: name,
+                             available: available,
+                             year: year,
+                             mileage: mileage,
+                             color: color,
+                             vin: vin,
+                             created_at: created_at,
+                             updated_at: updated_at
+                           })
   end
 end

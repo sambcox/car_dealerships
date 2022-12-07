@@ -6,7 +6,7 @@ require 'spec_helper'
 ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
 # Prevent database truncation if the environment is production
-abort("The Rails environment is running in production mode!") if Rails.env.production?
+abort('The Rails environment is running in production mode!') if Rails.env.production?
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
 
@@ -47,55 +47,55 @@ RSpec.configure do |config|
     Dealership.destroy_all
 
     @dealership_1 = Dealership.create!({
-      created_at: Time.now,
-      updated_at: Time.now,
-      name: Faker::Company.name,
-      city: Faker::Address.city,
-      service_department: Faker::Boolean.boolean(true_ratio: 0.8),
-      employees: Faker::Number.between(from: 10, to: 1000)
-    })
+                                         created_at: Time.now,
+                                         updated_at: Time.now,
+                                         name: Faker::Company.name,
+                                         city: Faker::Address.city,
+                                         service_department: Faker::Boolean.boolean(true_ratio: 0.8),
+                                         employees: Faker::Number.between(from: 10, to: 1000)
+                                       })
 
     @dealership_2 = Dealership.create!({
-      created_at: Time.now,
-      updated_at: Time.now,
-      name: Faker::Company.name,
-      city: Faker::Address.city,
-      service_department: Faker::Boolean.boolean(true_ratio: 0.8),
-      employees: Faker::Number.between(from: 10, to: 1000)
-    })
+                                         created_at: Time.now,
+                                         updated_at: Time.now,
+                                         name: Faker::Company.name,
+                                         city: Faker::Address.city,
+                                         service_department: Faker::Boolean.boolean(true_ratio: 0.8),
+                                         employees: Faker::Number.between(from: 10, to: 1000)
+                                       })
 
     @car_1 = @dealership_1.cars.create!({
-      created_at: Time.now,
-      updated_at: Time.now,
-      name: 'Lexus LFA',
-      available: true,
-      year: 1999,
-      mileage: Faker::Vehicle.mileage,
-      color: Faker::Vehicle.color,
-      vin: Faker::Vehicle.vin
-    })
+                                          created_at: Time.now,
+                                          updated_at: Time.now,
+                                          name: 'Lexus LFA',
+                                          available: true,
+                                          year: 1999,
+                                          mileage: Faker::Vehicle.mileage,
+                                          color: Faker::Vehicle.color,
+                                          vin: Faker::Vehicle.vin
+                                        })
 
     @car_2 = @dealership_2.cars.create!({
-      created_at: Time.now,
-      updated_at: Time.now,
-      name: 'Porsche 911',
-      available: Faker::Boolean.boolean(true_ratio: 0.9),
-      year: Faker::Vehicle.year,
-      mileage: Faker::Vehicle.mileage,
-      color: Faker::Vehicle.color,
-      vin: Faker::Vehicle.vin
-    })
+                                          created_at: Time.now,
+                                          updated_at: Time.now,
+                                          name: 'Porsche 911',
+                                          available: Faker::Boolean.boolean(true_ratio: 0.9),
+                                          year: Faker::Vehicle.year,
+                                          mileage: Faker::Vehicle.mileage,
+                                          color: Faker::Vehicle.color,
+                                          vin: Faker::Vehicle.vin
+                                        })
 
     @car_3 = @dealership_2.cars.create!({
-      created_at: Time.now,
-      updated_at: Time.now,
-      name: 'BMW M5',
-      available: false,
-      year: Faker::Vehicle.year,
-      mileage: Faker::Vehicle.mileage,
-      color: Faker::Vehicle.color,
-      vin: Faker::Vehicle.vin
-    })
+                                          created_at: Time.now,
+                                          updated_at: Time.now,
+                                          name: 'BMW M5',
+                                          available: false,
+                                          year: Faker::Vehicle.year,
+                                          mileage: Faker::Vehicle.mileage,
+                                          color: Faker::Vehicle.color,
+                                          vin: Faker::Vehicle.vin
+                                        })
   end
 
   # You can uncomment this line to turn off ActiveRecord support entirely.

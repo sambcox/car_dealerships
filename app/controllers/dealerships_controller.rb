@@ -5,9 +5,7 @@ class DealershipsController < ApplicationController
     @dealerships = Dealership.filter_by_name(params[:name_input]) if params[:name_input]
   end
 
-  def new
-
-  end
+  def new; end
 
   def create
     dealership = Dealership.new(dealership_params)
@@ -21,7 +19,7 @@ class DealershipsController < ApplicationController
     if Dealership.find_by_id(params[:id]).present?
       @dealership = Dealership.find(params[:id])
     else
-      redirect_to "/errors/not_found"
+      redirect_to '/errors/not_found'
     end
   end
 
@@ -43,11 +41,12 @@ class DealershipsController < ApplicationController
       @dealership = Dealership.find(params[:id])
       @car_count = @dealership.car_count
     else
-      redirect_to "/errors/not_found"
+      redirect_to '/errors/not_found'
     end
   end
 
   private
+
   def dealership_params
     params.permit(:name, :city, :service_department, :employees)
   end

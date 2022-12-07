@@ -10,7 +10,7 @@ RSpec.describe 'Dealerships New', type: :feature do
         expect(page).to have_content('City')
         expect(page).to have_content('Employees')
         expect(page).to have_content('service department')
-        expect(page).to have_field("name")
+        expect(page).to have_field('name')
         expect(page).to have_field('employees')
         page.fill_in 'employees', with: '1234'
         expect(page).to have_field('employees', with: '1234')

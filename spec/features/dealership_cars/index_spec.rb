@@ -29,7 +29,7 @@ RSpec.describe 'Dealerships Cars Index', type: :feature do
 
         click_on 'Sort by Make and Model'
 
-        expect(@car_3.name).to appear_before (@car_2.name)
+        expect(@car_3.name).to appear_before(@car_2.name)
       end
 
       it 'Includes a link to update each car' do
@@ -45,7 +45,7 @@ RSpec.describe 'Dealerships Cars Index', type: :feature do
       it 'has a link to delete each car' do
         visit "/dealerships/#{@dealership_1.id}/cars"
 
-        expect(page).to have_button("Delete this car")
+        expect(page).to have_button('Delete this car')
 
         first('.update').click_button('Delete this car')
 

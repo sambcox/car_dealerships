@@ -28,7 +28,7 @@ RSpec.describe 'Dealerships Show', type: :feature do
       it 'Includes a link to edit this specific dealership' do
         visit "/dealerships/#{@dealership_1.id}"
 
-        expect(page).to have_content("Update this dealership")
+        expect(page).to have_content('Update this dealership')
 
         click_on 'Update this dealership'
 
@@ -38,11 +38,11 @@ RSpec.describe 'Dealerships Show', type: :feature do
       it 'Includes a link to delete this specific dealership' do
         visit "/dealerships/#{@dealership_1.id}"
 
-        expect(page).to have_button("Delete this dealership")
+        expect(page).to have_button('Delete this dealership')
 
         click_button 'Delete this dealership'
 
-        expect(current_path).to eq("/dealerships")
+        expect(current_path).to eq('/dealerships')
 
         expect(page).to_not have_content(@dealership_1.name)
       end

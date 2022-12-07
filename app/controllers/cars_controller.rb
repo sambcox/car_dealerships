@@ -8,7 +8,7 @@ class CarsController < ApplicationController
     if Dealership.find_by_id(params[:id]).present?
       @dealership = Dealership.find(params[:id])
     else
-      redirect_to "/errors/not_found"
+      redirect_to '/errors/not_found'
     end
   end
 
@@ -39,7 +39,7 @@ class CarsController < ApplicationController
 
   def destroy
     Car.destroy(params[:id])
-    redirect_to "/cars"
+    redirect_to '/cars'
   end
 
   def show
@@ -51,6 +51,7 @@ class CarsController < ApplicationController
   end
 
   private
+
   def car_params
     params.permit(:name, :available, :year, :mileage, :color, :vin)
   end

@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe 'Cars Show', type: :feature do
-
   describe 'As a user, ' do
     describe 'When I visit /cars/:id, ' do
       it 'displays information for only that specific car' do
@@ -19,7 +18,7 @@ RSpec.describe 'Cars Show', type: :feature do
       it 'has a link to edit the car' do
         visit "/cars/#{@car_1.id}"
 
-        expect(page).to have_content("Update this car")
+        expect(page).to have_content('Update this car')
 
         click_on 'Update this car'
 
@@ -29,11 +28,11 @@ RSpec.describe 'Cars Show', type: :feature do
       it 'has a link to delete the car' do
         visit "/cars/#{@car_1.id}"
 
-        expect(page).to have_button("Delete this car")
+        expect(page).to have_button('Delete this car')
 
         click_button 'Delete this car'
 
-        expect(current_path).to eq("/cars")
+        expect(current_path).to eq('/cars')
         expect(page).to_not have_content(@car_1.name)
       end
     end

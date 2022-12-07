@@ -16,7 +16,7 @@ RSpec.describe 'Cars Index', type: :feature do
       end
 
       it 'Includes a link to the dealerships index' do
-        visit "/cars"
+        visit '/cars'
 
         expect('Back To All Dealerships').to appear_before(@car_1.name)
 
@@ -26,14 +26,14 @@ RSpec.describe 'Cars Index', type: :feature do
       end
 
       it 'Only includes the available cars' do
-        visit "/cars"
+        visit '/cars'
 
         expect(page).to have_content(@car_1.name)
         expect(page).to_not have_content(@car_3.name)
       end
 
       it 'Includes a link to update each car' do
-        visit "/cars"
+        visit '/cars'
 
         expect(page).to have_content('Update this car')
 
@@ -43,41 +43,41 @@ RSpec.describe 'Cars Index', type: :feature do
       end
 
       it 'has a link to delete each car' do
-        visit "/cars/"
+        visit '/cars/'
 
-        expect(page).to have_button("Delete this car")
+        expect(page).to have_button('Delete this car')
 
         first('.update').click_button('Delete this car')
 
-        expect(current_path).to eq("/cars")
+        expect(current_path).to eq('/cars')
         expect(page).to_not have_content(@car_1.name)
       end
 
       it 'Includes a box to filter by make and model exactly' do
-        visit "/cars"
+        visit '/cars'
 
-        expect(page).to have_content("Filter by make and model")
+        expect(page).to have_content('Filter by make and model')
 
         fill_in(:name_input, with: @car_1.name)
 
-        click_on("Filter")
+        click_on('Filter')
 
-        expect(current_path).to eq("/cars")
+        expect(current_path).to eq('/cars')
 
         expect(page).to have_content(@car_1.name)
         expect(page).to_not have_content(@car_2.name)
       end
 
       it 'Includes a box to filter by make and model partially' do
-        visit "/cars"
+        visit '/cars'
 
-        expect(page).to have_content("Filter by make and model")
+        expect(page).to have_content('Filter by make and model')
 
         fill_in(:name_input, with: 'Por')
 
-        click_on("Filter")
+        click_on('Filter')
 
-        expect(current_path).to eq("/cars")
+        expect(current_path).to eq('/cars')
 
         expect(page).to have_content(@car_2.name)
         expect(page).to_not have_content(@car_1.name)

@@ -6,6 +6,5 @@ RSpec.describe Car, type: :model do
   end
 
   describe 'instance methods' do
-
   end
 end

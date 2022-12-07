@@ -10,8 +10,8 @@ RSpec.describe 'Dealerships Edit', type: :feature do
         expect(page).to have_content('City')
         expect(page).to have_content('Employees')
         expect(page).to have_content('service department')
-        expect(page).to have_field("name", with: @dealership_1.name)
-        expect(page).to have_field("city", with: @dealership_1.city)
+        expect(page).to have_field('name', with: @dealership_1.name)
+        expect(page).to have_field('city', with: @dealership_1.city)
         expect(page).to have_field('employees', with: @dealership_1.employees)
       end
 

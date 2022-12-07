@@ -8,16 +8,16 @@ Rails.application.routes.draw do
   post '/dealerships', to: 'dealerships#create'
   get '/dealerships/:id/edit', to: 'dealerships#edit'
   patch '/dealerships/:id', to: 'dealerships#update'
-  get '/dealerships/:id/cars/new', to: "cars#new"
-  post '/dealerships/:id/cars', to: "cars#create"
-  get '/dealerships/:id', to: "dealerships#show"
+  get '/dealerships/:id/cars/new', to: 'cars#new'
+  post '/dealerships/:id/cars', to: 'cars#create'
+  get '/dealerships/:id', to: 'dealerships#show'
   delete '/dealerships/:id', to: 'dealerships#destroy'
-  get '/cars/:id/edit', to: "cars#edit"
-  patch 'cars/:id', to: "cars#update"
-  get '/cars/:id', to: "cars#show"
+  get '/cars/:id/edit', to: 'cars#edit'
+  patch 'cars/:id', to: 'cars#update'
+  get '/cars/:id', to: 'cars#show'
   delete '/cars/:id', to: 'cars#destroy'
   delete '/dealerships/:dealership_id/cars/:car_id', to: 'dealership_cars#destroy'
-  get '/dealerships/:id/cars', to: "dealership_cars#index"
-  post '/dealerships/:id/cars', to: "dealership_cars#index"
+  get '/dealerships/:id/cars', to: 'dealership_cars#index'
+  post '/dealerships/:id/cars', to: 'dealership_cars#index'
   get '/errors/not_found', to: 'errors#not_found'
 end
